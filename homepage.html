@@ -12,17 +12,17 @@
         <nav>
             <ul>
                 <li><img src="logo.svg" alt="Logo"></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Movie</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Concerts</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#section2">Movie</a></li>
+                <li><a href="index.html#section2">Events</a></li>
+                <li><a href="index.html#section3">Concerts</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
     </div>
-    <div class="section1">
+    <div class="section1" id="section1">
         
         <div class="content">
             <img src="white.png" alt="Snow">
@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-    <div class="section2">
+    <div class="section2" id="section2">
         <h2 style="color: aliceblue;">Trending Movies</h2>
         <div class="content">
             
@@ -80,7 +80,7 @@
             </div>
         </div>
     </div>
-    <div class="section3">
+    <div class="section3" id="section3">
         <h2 style="color: aliceblue;">Concerts</h2>
         <div class="concert">
             
@@ -128,7 +128,8 @@
         </div> 
     </div> 
     <script>
-        document.querySelectorAll('.dabba button').forEach(button => {
+        // Handle movie booking buttons in section2
+        document.querySelectorAll('.section2 .dabba button').forEach(button => {
             button.addEventListener('click', function() {
                 let movieTitle = this.previousElementSibling.textContent; 
                 let encodedTitle = encodeURIComponent(movieTitle); 
@@ -136,15 +137,14 @@
             });
         });
         
-        
-        const validateRedirect = () => {
-            const movieTitle = this.previousElementSibling.textContent;
-            if (!movieTitle) {
-                alert('Movie title is missing!');
-                return;
-            }
-            return true; // Return true if validation passes
-        };
+        // Handle concert booking buttons in section3
+        document.querySelectorAll('.section3 .dabba button').forEach(button => {
+            button.addEventListener('click', function() {
+                let concertTitle = this.previousElementSibling.textContent; 
+                let encodedTitle = encodeURIComponent(concertTitle); 
+                window.location.href = `concert.html?concert=${encodedTitle}`; 
+            });
+        });
     </script>
 </body>
 </html>

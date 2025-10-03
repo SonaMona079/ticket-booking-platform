@@ -12,17 +12,17 @@
         <nav>
             <ul>
                 <li><img src="logo.svg" alt="Logo"></li>
-                <li><a href="#section1">Home</a></li>
-                <li><a href="#content">Movie</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#concerts">Concerts</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#section2">Movie</a></li>
+                <li><a href="#section2">Events</a></li>
+                <li><a href="#section3">Concerts</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#login">Login</a></li>
+                <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
     </div>
-    <div class="section1">
+    <div class="section1" id="section1">
         
         <div class="content">
             <img src="white.png" alt="Snow">
@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-    <div class="section2">
+    <div class="section2" id="section2">
         <h2 style="color: aliceblue;">Trending Movies</h2>
         <div class="content">
             
@@ -80,7 +80,7 @@
             </div>
         </div>
     </div>
-    <div class="section3">
+    <div class="section3" id="section3">
         <h2 style="color: aliceblue;">Concerts</h2>
         <div class="concert">
             
@@ -128,32 +128,21 @@
         </div> 
     </div> 
     <script>
-        document.querySelectorAll('.dabba button').forEach(button => {
+        // Handle movie booking buttons in section2
+        document.querySelectorAll('.section2 .dabba button').forEach(button => {
             button.addEventListener('click', function() {
                 let movieTitle = this.previousElementSibling.textContent; // Get movie title
                 let encodedTitle = encodeURIComponent(movieTitle); // Encode for URL
-                window.location.href = `movieseatbooking.html?movie=${encodedTitle}`; // Redirect
+                window.location.href = `movieseatbooking.html?movie=${encodedTitle}`; // Redirect to movie booking
             });
         });
         
-        // Validate if movie title is retrieved, display message if not
-        const validateRedirect = () => {
-            const movieTitle = this.previousElementSibling.textContent;
-            if (!movieTitle) {
-                alert('Movie title is missing!');
-                return;
-            }
-            return true; // Return true if validation passes
-        };
-        
-        // Update the button click functionality to include validation
-        document.querySelectorAll('.dabba button').forEach(button => {
+        // Handle concert booking buttons in section3
+        document.querySelectorAll('.section3 .dabba button').forEach(button => {
             button.addEventListener('click', function() {
-                if (validateRedirect.call(this)) { // Call validateRedirect with context
-                    let movieTitle = this.previousElementSibling.textContent; // Get movie title
-                    let encodedTitle = encodeURIComponent(movieTitle); // Encode for URL
-                    window.location.href = `movieseatbooking.html?movie=${encodedTitle}`; // Redirect
-                }
+                let concertTitle = this.previousElementSibling.textContent; // Get concert title
+                let encodedTitle = encodeURIComponent(concertTitle); // Encode for URL
+                window.location.href = `concert.html?concert=${encodedTitle}`; // Redirect to concert booking
             });
         });
     </script>

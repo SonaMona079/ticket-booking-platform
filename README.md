@@ -11,7 +11,7 @@ A web-based ticket booking platform for movies and concerts with an interactive 
 
 ## Demo
 
-Visit the live demo: [Ticket Booking Platform](https://your-username.github.io/ticket-booking-platform/)
+Visit the live demo: [Ticket Booking Platform](https://gaur-avvv.github.io/ticket-booking-platform)
 
 ## Technologies Used
 

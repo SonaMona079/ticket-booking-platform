@@ -13,9 +13,9 @@
             <ul>
                 <li><img src="logo.svg" alt="Logo"></li>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#section2">Movie</a></li>
-                <li><a href="#section2">Events</a></li>
-                <li><a href="#section3">Concerts</a></li>
+                <li><a href="index.html#section2">Movie</a></li>
+                <li><a href="index.html#section2">Events</a></li>
+                <li><a href="index.html#section3">Concerts</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="login.html">Login</a></li>
@@ -75,7 +75,7 @@
             <br>
             <br>
             <p>Sanam Teri Kasam</p>
-            <button id="btn">Book Now</button> <!-- Added a button for booking the movie -->
+            <button id="btn">Book Now</button> 
             
             </div>
         </div>
@@ -85,7 +85,7 @@
         <div class="concert">
             
                 <div class="dabba">
-                    <img id="six" src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U2F0LCAxMiBBcHI%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00430100-dmyhawfmrs-portrait.jpg" alt="Justin Bieber">
+                    <img id="six" src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U2F0LCAxMSBPY3Q%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end:l-text,ie-UFJPTU9URUQ%3D,co-FFFFFF,bg-DC354B,ff-Roboto,fs-20,lx-N16,ly-12,lfo-top_right,pa-12_14_12_14,r-6,l-end/et00463866-mjsyvjzrcd-portrait.jpg">
                     <br>
                     <br>
                     <br>
@@ -101,7 +101,7 @@
                     <button id="btn">Book Now</button>
                 </div>
                 <div class="dabba">
-                    <img id="eight" src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCAxNCBNYXI%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00418200-tpsxpxplak-portrait.jpg" alt="Ariana Grande">
+                    <img id="eight" src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U2F0LCAxMSBPY3Q%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00434549-nnuzzyttrr-portrait.jpg" alt="Ariana Grande">
                     <br>
                     <br>
                     <br>
@@ -109,7 +109,7 @@
                     <button id="btn">Book Now</button>
                 </div>
                 <div class="dabba">
-                    <img id="nine" src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U2F0LCAyNiBBcHI%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00431830-wxcqcmeatm-portrait.jpg" alt="Alan Walker">
+                    <img id="nine" src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U2F0LCA4IE5vdg%3D%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00462236-pkjdqhsjgv-portrait.jpg" alt="Alan Walker">
                     <br>
                     <br>
                     <br>
@@ -128,21 +128,26 @@
         </div> 
     </div> 
     <script>
+        // Handle "Book Now" button in section1
+        document.getElementById('btn').addEventListener('click', function() {
+            window.location.href = 'movieseatbooking.html';
+        });
         // Handle movie booking buttons in section2
         document.querySelectorAll('.section2 .dabba button').forEach(button => {
             button.addEventListener('click', function() {
-                let movieTitle = this.previousElementSibling.textContent; // Get movie title
-                let encodedTitle = encodeURIComponent(movieTitle); // Encode for URL
-                window.location.href = `movieseatbooking.html?movie=${encodedTitle}`; // Redirect to movie booking
+                let movieTitle = this.previousElementSibling.textContent;
+                let encodedTitle = encodeURIComponent(movieTitle);
+                window.location.href = `movieseatbooking.html?movie=${encodedTitle}`;
+
             });
         });
-        
+
         // Handle concert booking buttons in section3
         document.querySelectorAll('.section3 .dabba button').forEach(button => {
             button.addEventListener('click', function() {
-                let concertTitle = this.previousElementSibling.textContent; // Get concert title
-                let encodedTitle = encodeURIComponent(concertTitle); // Encode for URL
-                window.location.href = `concert.html?concert=${encodedTitle}`; // Redirect to concert booking
+                let concertTitle = this.previousElementSibling.textContent; 
+                let encodedTitle = encodeURIComponent(concertTitle); 
+                window.location.href = `concert.html?concert=${encodedTitle}`; 
             });
         });
     </script>

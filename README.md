@@ -12,6 +12,12 @@ A web-based ticket booking platform for movies and concerts with an interactive 
 ## Demo
 
 Visit the live demo: [Ticket Booking Platform](https://gaur-avvv.github.io/ticket-booking-platform)
+##
+<img width="1815" height="1010" alt="image" src="https://github.com/user-attachments/assets/57629e12-132d-4905-bc23-72b6153c169f" />
+
+<img width="1816" height="1010" alt="image" src="https://github.com/user-attachments/assets/6b46af97-1d91-49d9-8985-e4938a31d693" />
+
+
 
 ## Technologies Used
 
